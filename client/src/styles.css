@@ -1,0 +1,151 @@
+/* Reset CSS */
+* {
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Setting a BG colour and min height for the app  */
+.App {
+    background-color: #181818;
+    min-height: 100vh;
+}
+
+/* styling the navbar */
+.navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: #222;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* styling the main container */
+.container {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2vh;
+}
+
+/* styling the memeView, the meme container */
+.memeView {
+    background-color: #343434;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    width: 67%;
+    justify-content: center;
+    margin: 0.2rem 0.8rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    align-items: center;
+}
+
+/* styling individual memes */
+.meme {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+    min-width: 16rem;
+    background-color: #222;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: #ccc;
+}
+
+/* styling the meme images */
+.meme img {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 0.5rem;
+}
+
+/* styling the input form div */
+.form {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 12vh;
+    width: 30%;
+    margin: 0.2rem;
+    height: fit-content;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #343434;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+/* styling the form heading  */
+.form h2 {
+    margin: auto;
+}
+
+/* styling the input elements in the form div */
+.form input {
+    outline: none;
+    margin: .5rem 1rem;
+    padding: .5rem;
+    border-radius: 0.5rem;
+    border: 2px solid #000000;
+    font-size: 1rem;
+}
+
+/* styling the submit button in the form  */
+.form input[type="submit"] {
+    background-color: #13d34d;
+    border: none;
+    padding: 0.6rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Added media queries to improve responsiveness of website */
+@media screen and (max-width: 1400px) {
+    .container {
+        display: block;
+    }
+
+    .memeView {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .form {
+        width: 100%;
+        margin: 0rem;
+    }
+
+    .form h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 360) {
+    .container {
+        width: 100%;
+        padding: 0rem;
+    }
+
+    .memeView {
+        margin: 0;
+        width: 100%;
+    }
+
+    .form h2 {
+        font-size: 0.5rem;
+    }
+}

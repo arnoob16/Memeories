@@ -3,7 +3,6 @@ const memeSchema = mongoose.Schema({
     username: String,
     url: String,
     caption: String,
-    tags: [String],
     likes: {
         type: Number,
         default: 0

@@ -11,8 +11,6 @@ const Loader = () => {
 
 const Memes = () => {
     const memes = useSelector((state) => state.memes);
-    console.log(memes);
-
     return (
         !memes.length ? (
             <div className="memeView">
@@ -26,6 +24,9 @@ const Memes = () => {
                     url = {meme["url"]}
                     caption = {meme["caption"]}
                     username = {meme["username"]}
+                    timestamp = {meme["dateCreated"]}
+                    likes = {meme["likes"]}
+                    _id = {meme["_id"]}
                 />
             })}
             </div>

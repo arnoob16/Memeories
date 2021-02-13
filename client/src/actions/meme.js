@@ -17,3 +17,12 @@ export const createMeme = (meme) => async(dispatch) => {
         console.log(error);
     }
 }
+
+export const deleteMeme = (id) => async(dispatch) => {
+    try {
+        await api.deleteMeme(id);
+        dispatch({type: 'DELETE', payload: id});
+    } catch (error) {
+        console.log(error);
+    }
+}

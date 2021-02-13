@@ -9,7 +9,12 @@ const Form = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         dispatch(createMeme(memeData))
+        clear();
     }
+
+    const clear = () => {
+        setMemeData({username:'', caption:'', url: ''});
+    } 
 
     return (
         <form autoComplete="off" noValidate onSubmit={handleSubmit} className="form">

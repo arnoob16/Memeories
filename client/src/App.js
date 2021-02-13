@@ -8,10 +8,8 @@ import {getMemes} from './actions/meme';
 const App = () => {
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch( getMemes());
+        dispatch(getMemes());
     }, [dispatch]);
-
-    // const memes = useSelector((state) => state.memes);
 
     return (
         <div className="App">

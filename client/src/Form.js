@@ -1,24 +1,34 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useDispatch} from 'react-redux';
-import {createMeme} from './actions/meme';
-
-const Form = () => {
-
+import {createMeme, updateMeme} from './actions/meme';
+import {useSelector} from 'react-redux';
+const Form = ({currentMemeId, setCurrentMemeId}) => {
     const [memeData, setMemeData] = useState({username:'', caption:'', url: ''})
+    const meme = useSelector((state) => currentMemeId ? state.memes.find((meme) => meme._id === currentMemeId) : null);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        if(meme) setMemeData(meme);
+    }, [meme])
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        dispatch(createMeme(memeData))
+        if(currentMemeId){
+            dispatch(updateMeme(currentMemeId, memeData));
+        }else{
+            dispatch(createMeme(memeData));
+        }
         clear();
     }
 
     const clear = () => {
+        setCurrentMemeId(null);
         setMemeData({username:'', caption:'', url: ''});
     } 
 
     return (
         <form autoComplete="off" noValidate onSubmit={handleSubmit} className="form">
-            <h2>Upload your favourite meme</h2>
+            <h2>{currentMemeId ? "Edit" : "Upload"} your favourite meme</h2>
             <input 
                 type="text" 
                 value = {memeData.username} 

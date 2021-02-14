@@ -9,7 +9,7 @@ const Loader = () => {
     )
 }
 
-const Memes = () => {
+const Memes = ({setCurrentMemeId}) => {
     const memes = useSelector((state) => state.memes);
     return (
         !memes.length ? (
@@ -27,6 +27,7 @@ const Memes = () => {
                     timestamp = {meme["dateCreated"]}
                     likes = {meme["likes"]}
                     _id = {meme["_id"]}
+                    setCurrentMemeId = {setCurrentMemeId}
                 />
             })}
             </div>

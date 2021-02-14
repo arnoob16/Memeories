@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 export const getMemes = async (req, res) => {
     try {
         const memes = await PostMeme.find();
-        const last100Memes = memes.slice(Math.max(memes.length - 100, 0)).reverse();
+        const last100Memes = memes.slice(Math.max(memes.length - 100, 0));
         res.status(200).json(last100Memes);
     } catch (err) {
         res.status(404).json({
@@ -52,10 +52,37 @@ export const createMeme = async (req, res) => {
     }
 }
 
+export const editMeme = async(req, res) => {
+    const {id: _id} = req.params;
+    const meme = req.body;
+    if (!mongoose.Types.ObjectId.isValid(_id)) 
+        return res.status(404).json("No such meme with that ID found.")
+    const updatedMeme = await PostMeme.findByIdAndUpdate(_id, meme, {new: true});
+    return res.status(204).json(updatedMeme);
+}
+
 export const deleteMeme = async (req, res) => {
     const id = req.params.id;
     if (!mongoose.Types.ObjectId.isValid(id)) 
         return res.status(404).json("No such meme with that ID found.")
     await PostMeme.findByIdAndRemove(id);
     return res.status(204).json({"message": "Post Deleted Succesfully"});
+}
+
+export const likeMeme = async (req,res) => {
+    const id = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(id)) 
+        return res.status(404).json("No such meme with that ID found.")
+    const meme = await PostMeme.findById(id);
+    const updatedMeme = await PostMeme.findByIdAndUpdate(id, {likes: meme.likes + 1}, {new : true})
+    return res.json(updatedMeme);
+}
+
+export const dislikeMeme = async (req,res) => {
+    const id = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(id)) 
+        return res.status(404).json("No such meme with that ID found.")
+    const meme = await PostMeme.findById(id);
+    const updatedMeme = await PostMeme.findByIdAndUpdate(id, {likes: meme.likes - 1}, {new : true})
+    return res.json(updatedMeme);
 }

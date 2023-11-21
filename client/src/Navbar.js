@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 const Navbar = () => {
-    return (
-        <div className="navbar">
-            <h1>Memeories</h1>
-        </div>
-    )
-} 
+	return (
+		<div className="navbar">
+			<h3>Memeories</h3>
+		</div>
+	);
+};
 
 export default Navbar;

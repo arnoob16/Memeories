@@ -1,252 +1,252 @@
 /* Reset CSS */
 * {
-    margin: 0%;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+	margin: 0%;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
 }
 
 /* Setting a BG colour and min height for the app  */
 .App {
-    background-color: #181818;
-    min-height: 100vh;
+	background-color: #181818;
+	min-height: 100vh;
 }
 
 /* styling the navbar */
 .navbar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 10vh;
-    background-color: #222;
-    color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	height: 5vh;
+	background-color: #222;
+	color: #f0f0f0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* styling the main container */
 .container {
-    margin: auto;
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2vh;
+	margin: auto;
+	width: 90%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 2vh;
 }
 
 /* styling the memeView, the meme container */
 .memeView {
-    background-color: #343434;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1rem;
-    width: 67%;
-    justify-content: center;
-    margin: 0.2rem 0.8rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    /* align-items: center; */
+	background-color: #343434;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 1rem;
+	width: 67%;
+	justify-content: center;
+	margin: 0.2rem 0.8rem;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	/* align-items: center; */
 }
 
 /* styling individual memes */
 .meme {
-    margin: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    max-width: 30%;
-    min-width: 16rem;
-    background-color: #222;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    color: #ccc;
+	margin: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	background-color: #222;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	color: #ccc;
 }
 
 /* styled the username of meme posters */
-.userName{
-    color: #e23b3b;
-    font-size: 1.5em;
+.userName {
+	color: #e23b3b;
+	font-size: 1.5em;
 }
 
-.memeHeader{
-    margin-bottom: 1em;
+.memeHeader {
+	margin-bottom: 1em;
 }
 
 /* styling the meme images */
 .meme img {
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    width: 100%;
-    margin: auto;
-    margin-bottom: 0.5rem;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	width: 100%;
+	margin: auto;
+	margin-bottom: 0.5rem;
 }
 
 /* styling the input form div */
 .form {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 12vh;
-    width: 30%;
-    margin: 0.2rem;
-    height: fit-content;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    background-color: #343434;
-    color: #fff;
-    border-radius: 0.5rem;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 12vh;
+	width: 30%;
+	margin: 0.2rem;
+	height: fit-content;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	background-color: #343434;
+	color: #fff;
+	border-radius: 0.5rem;
 }
 
 /* styling the form heading  */
 .form h2 {
-    margin: auto;
+	margin: auto;
 }
 
 /* styling the input elements in the form div */
 .form input {
-    outline: none;
-    margin: .5rem 1rem;
-    padding: .5rem;
-    border-radius: 0.5rem;
-    border: 2px solid #000000;
-    font-size: 1rem;
+	outline: none;
+	margin: 0.5rem 1rem;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	border: 2px solid #000000;
+	font-size: 1rem;
 }
 
 /* styling the submit button in the form  */
 .form input[type="submit"] {
-    background-color: #13d34d;
-    border: none;
-    padding: 0.6rem;
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
+	background-color: #13d34d;
+	border: none;
+	padding: 0.6rem;
+	color: #fff;
+	font-size: 1.2rem;
+	font-weight: bold;
+	cursor: pointer;
 }
 
 .btnActions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1rem;
+	padding: 0 2rem;
 }
 
 /* Added media queries to improve responsiveness of website */
 @media screen and (max-width: 1400px) {
-    .container {
-        display: block;
-    }
+	.container {
+		display: block;
+	}
 
-    .memeView {
-        width: 100%;
-        margin: 0.5rem 0;
-    }
+	.memeView {
+		width: 100%;
+		margin: 0.5rem 0;
+	}
 
-    .form {
-        width: 100%;
-        margin: 0rem;
-    }
+	.form {
+		width: 100%;
+		margin: 0rem;
+	}
 
-    .form h2 {
-        font-size: 1.2rem;
-    }
+	.form h2 {
+		font-size: 1.2rem;
+	}
 }
 
 @media screen and (max-width: 360) {
-    .container {
-        width: 100%;
-        padding: 0rem;
-    }
+	.container {
+		width: 100%;
+		padding: 0rem;
+	}
 
-    .memeView {
-        margin: 0;
-        width: 100%;
-    }
+	.memeView {
+		margin: 0;
+		width: 100%;
+	}
 
-    .form h2 {
-        font-size: 0.5rem;
-    }
+	.form h2 {
+		font-size: 0.5rem;
+	}
 }
 
 .likeIcon {
-    cursor: pointer;
-    padding: 10px 10px 8px;
-    background: #fff;
-    border-radius: 50%;
-    display: inline-block;
-    color: #aaa;
-    transition: .2s;
+	cursor: pointer;
+	padding: 10px 10px 8px;
+	background: #fff;
+	border-radius: 50%;
+	display: inline-block;
+	color: #aaa;
+	transition: 0.2s;
 }
 
 .likeIcon:hover {
-    color: #666;
+	color: #666;
 }
 
 .likeIcon:before {
-    font-family: fontawesome;
-    content: '\f004';
-    font-style: normal;
+	font-family: fontawesome;
+	content: "\f004";
+	font-style: normal;
 }
 
-.deleteIcon{
-    cursor: pointer;
-    padding: 10px 12px;
-    background: #fff;
-    border-radius: 50%;
-    display: inline-block;
-    color: #aaa;
-    transition: .2s;
-    border: none;
-    outline: none;
+.deleteIcon {
+	cursor: pointer;
+	padding: 10px 12px;
+	background: #fff;
+	border-radius: 50%;
+	display: inline-block;
+	color: #aaa;
+	transition: 0.2s;
+	border: none;
+	outline: none;
 }
 
-.deleteIcon:before{
-    font-family: fontawesome;
-    content: '\f014';
-    font-style: normal;
-    font-size: 1rem;
+.deleteIcon:before {
+	font-family: fontawesome;
+	content: "\f014";
+	font-style: normal;
+	font-size: 1rem;
 }
 
-.deleteIcon:hover{
-    color: #df5050;
+.deleteIcon:hover {
+	color: #df5050;
 }
 
-.editIcon{
-    cursor: pointer;
-    padding: 10px 11px;
-    background: #fff;
-    border-radius: 50%;
-    display: inline-block;
-    color: #aaa;
-    transition: .2s;
-    border: none;
-    outline: none;
+.editIcon {
+	cursor: pointer;
+	padding: 10px 11px;
+	background: #fff;
+	border-radius: 50%;
+	display: inline-block;
+	color: #aaa;
+	transition: 0.2s;
+	border: none;
+	outline: none;
 }
 
-.editIcon:before{
-    font-family: fontawesome;
-    content: '\f044';
-    font-style: normal;
-    font-size: 1rem;
+.editIcon:before {
+	font-family: fontawesome;
+	content: "\f044";
+	font-style: normal;
+	font-size: 1rem;
 }
 
-.editIcon:hover{
-    color: #df5050;
+.editIcon:hover {
+	color: #df5050;
 }
 
 .press {
-    color: #e23b3b;
-    animation: fade 1s;
+	color: #e23b3b;
+	animation: fade 1s;
 }
 
-.liked{
-    color: #e23b3b;
+.liked {
+	color: #e23b3b;
 }
 
 @keyframes fade {
-    0% {
-        color: transparent;
-    }
+	0% {
+		color: transparent;
+	}
 
-    100% {
-        color: #e23b3b;
-    }
+	100% {
+		color: #e23b3b;
+	}
 }

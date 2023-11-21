@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:5000/memes";
+const url = "https://memeories-backend.vercel.app/memes";
 
 export const fetchMemes = () => axios.get(url);
 export const createMeme = (meme) => axios.post(url, meme);
